@@ -1,9 +1,9 @@
 <?php
-use PHPUnit\Framework\TestCase;
 
 require_once('src/cumulative_factor.php');
 
-class CumulativeFactorTest extends TestCase
+
+class CumulativeFactorTest extends PHPUnit_Framework_TestCase
 {
 	public function testGetMonthKwh()
 	{
