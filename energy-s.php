@@ -2,7 +2,7 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 /*
-Plugin Name: Energy-s
+Plugin Name: Energy-S
 Plugin URI:  https://github.com/LucianoPC/energy-s
 Description: Ferramenta para companhar a economia realizada no consumo de energia
 Version:     0.1
