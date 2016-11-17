@@ -1,4 +1,5 @@
-=== Plugin Name ===
+=== Energy-S === ![Build Status](https://travis-ci.org/LucianoPC/energy-s.svg?branch=master)
+
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: http://example.com/
 Tags: comments, spam
