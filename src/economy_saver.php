@@ -6,11 +6,36 @@ class EconomySaver {
   private $totalKwhComsumption;
   private $totalValue;
 
-  public function __construct($occupationArea, $totalKwhComsumption,
-                              $totalValue) {
+  private $consumptionList;
+
+  public function __construct($occupationArea, $totalKwhComsumption, $totalValue) {
     $this->occupationArea = $occupationArea;
     $this->totalKwhComsumption = $totalKwhComsumption;
     $this->totalValue = $totalValue;
+
+    $this->consumptionList = [];
+  }
+
+  public function addConsumption($consumption) {
+    $this->consumptionList[] = $consumption;
+  }
+
+  public function getKwhEconomy() {
+    $kwhEconomy = 0.0;
+    foreach($this->consumptionList as $consumption) {
+      $kwhEconomy += $consumption->getKwhEconomy();
+    }
+
+    return $kwhEconomy;
+  }
+
+  public function getMoneyEconomy() {
+    $moneyEconomy = 0.0;
+    foreach($this->consumptionList as $consumption) {
+      $moneyEconomy += $consumption->getMoneyEconomy();
+    }
+
+    return $moneyEconomy;
   }
 
   public function getFareAmount() {
