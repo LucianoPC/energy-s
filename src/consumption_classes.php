@@ -61,3 +61,65 @@ class LightingConsumption extends Consumption {
     return 0.0;
   }
 }
+
+class AirConditionerConsumption extends Consumption {
+
+  const AC_CENTRAL = "AC Central";
+  const AC_INDIVIDUAL = "AC Individual";
+  const THERE_NOT = "There Not";
+
+  private $economy;
+  private $installationTipe;
+
+  public function __construct($economySaver, $installationTipe) {
+    parent::__construct($economySaver);
+
+    $this->installationTipe = $installationTipe;
+    $this->initializeEconomyMap();
+  }
+
+  public function getPercentageEconomy() {
+    $occupationArea = $this->economySaver->getOccupationArea();
+
+    return $this->economy[$occupationArea][$this->installationTipe];
+  }
+
+  private function initializeEconomyMap() {
+    $this->economy = [];
+
+    $this->economy[OccupationArea::HOTEL] = [];
+    $this->economy[OccupationArea::HOTEL][self::AC_CENTRAL] = 24;
+    $this->economy[OccupationArea::HOTEL][self::AC_INDIVIDUAL] = 6;
+    $this->economy[OccupationArea::HOTEL][self::THERE_NOT] = 0;
+
+    $this->economy[OccupationArea::HOSPITAL] = [];
+    $this->economy[OccupationArea::HOSPITAL][self::AC_CENTRAL] = 15;
+    $this->economy[OccupationArea::HOSPITAL][self::AC_INDIVIDUAL] = 0;
+    $this->economy[OccupationArea::HOSPITAL][self::THERE_NOT] = 0;
+
+    $this->economy[OccupationArea::SHOPPING] = [];
+    $this->economy[OccupationArea::SHOPPING][self::AC_CENTRAL] = 24;
+    $this->economy[OccupationArea::SHOPPING][self::AC_INDIVIDUAL] = 6;
+    $this->economy[OccupationArea::SHOPPING][self::THERE_NOT] = 0;
+
+    $this->economy[OccupationArea::SUPER_MARKET] = [];
+    $this->economy[OccupationArea::SUPER_MARKET][self::AC_CENTRAL] = 2;
+    $this->economy[OccupationArea::SUPER_MARKET][self::AC_INDIVIDUAL] = 2;
+    $this->economy[OccupationArea::SUPER_MARKET][self::THERE_NOT] = 0;
+
+    $this->economy[OccupationArea::EDUCATIONAL_INSTITUTION] = [];
+    $this->economy[OccupationArea::EDUCATIONAL_INSTITUTION][self::AC_CENTRAL] = 24;
+    $this->economy[OccupationArea::EDUCATIONAL_INSTITUTION][self::AC_INDIVIDUAL] = 15;
+    $this->economy[OccupationArea::EDUCATIONAL_INSTITUTION][self::THERE_NOT] = 0;
+
+    $this->economy[OccupationArea::COMMERCIAL_CONDOMINIUM] = [];
+    $this->economy[OccupationArea::COMMERCIAL_CONDOMINIUM][self::AC_CENTRAL] = 24;
+    $this->economy[OccupationArea::COMMERCIAL_CONDOMINIUM][self::AC_INDIVIDUAL] = 6;
+    $this->economy[OccupationArea::COMMERCIAL_CONDOMINIUM][self::THERE_NOT] = 0;
+
+    $this->economy[OccupationArea::RESIDENTIAL_CONDOMINIUM] = [];
+    $this->economy[OccupationArea::RESIDENTIAL_CONDOMINIUM][self::AC_CENTRAL] = 24;
+    $this->economy[OccupationArea::RESIDENTIAL_CONDOMINIUM][self::AC_INDIVIDUAL] = 6;
+    $this->economy[OccupationArea::RESIDENTIAL_CONDOMINIUM][self::THERE_NOT] = 0;
+  }
+}
