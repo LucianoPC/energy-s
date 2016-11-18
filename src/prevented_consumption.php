@@ -81,8 +81,8 @@ class PreventedConsumption {
       $finalDate = $this->initialDate;
     }
 
-    $finalSeconds = strtotime(date_format($finalDate, 'd-m-Y H:i:s'));
-    $initalSeconds = strtotime(date_format($this->initialDate, 'd-m-Y H:i:s'));
+    $finalSeconds = strtotime($finalDate->format('d-m-Y H:i:s'));
+    $initalSeconds = strtotime($this->initialDate->format('d-m-Y H:i:s'));
     $deltaSeconds = $finalSeconds - $initalSeconds;
 
     return $deltaSeconds;
