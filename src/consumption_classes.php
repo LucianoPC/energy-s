@@ -123,3 +123,57 @@ class AirConditionerConsumption extends Consumption {
     $this->economy[OccupationArea::RESIDENTIAL_CONDOMINIUM][self::THERE_NOT] = 0;
   }
 }
+
+class WaterHeatingConsumption extends Consumption {
+
+  const HAS_HEATING = "Has Heating";
+  const WITHOUT_HEATING = "Without Heating";
+
+  private $economy;
+  private $installationTipe;
+
+  public function __construct($economySaver, $installationTipe) {
+    parent::__construct($economySaver);
+
+    $this->installationTipe = $installationTipe;
+    $this->initializeEconomyMap();
+  }
+
+  public function getPercentageEconomy() {
+    $occupationArea = $this->economySaver->getOccupationArea();
+
+    return $this->economy[$occupationArea][$this->installationTipe];
+  }
+
+  private function initializeEconomyMap() {
+    $this->economy = [];
+
+    $this->economy[OccupationArea::HOTEL] = [];
+    $this->economy[OccupationArea::HOTEL][self::HAS_HEATING] = 24;
+    $this->economy[OccupationArea::HOTEL][self::WITHOUT_HEATING] = 0;
+
+    $this->economy[OccupationArea::HOSPITAL] = [];
+    $this->economy[OccupationArea::HOSPITAL][self::HAS_HEATING] = 10;
+    $this->economy[OccupationArea::HOSPITAL][self::WITHOUT_HEATING] = 0;
+
+    $this->economy[OccupationArea::SHOPPING] = [];
+    $this->economy[OccupationArea::SHOPPING][self::HAS_HEATING] = 0;
+    $this->economy[OccupationArea::SHOPPING][self::WITHOUT_HEATING] = 0;
+
+    $this->economy[OccupationArea::SUPER_MARKET] = [];
+    $this->economy[OccupationArea::SUPER_MARKET][self::HAS_HEATING] = 0;
+    $this->economy[OccupationArea::SUPER_MARKET][self::WITHOUT_HEATING] = 0;
+
+    $this->economy[OccupationArea::EDUCATIONAL_INSTITUTION] = [];
+    $this->economy[OccupationArea::EDUCATIONAL_INSTITUTION][self::HAS_HEATING] = 1.5;
+    $this->economy[OccupationArea::EDUCATIONAL_INSTITUTION][self::WITHOUT_HEATING] = 0;
+
+    $this->economy[OccupationArea::COMMERCIAL_CONDOMINIUM] = [];
+    $this->economy[OccupationArea::COMMERCIAL_CONDOMINIUM][self::HAS_HEATING] = 0;
+    $this->economy[OccupationArea::COMMERCIAL_CONDOMINIUM][self::WITHOUT_HEATING] = 0;
+
+    $this->economy[OccupationArea::RESIDENTIAL_CONDOMINIUM] = [];
+    $this->economy[OccupationArea::RESIDENTIAL_CONDOMINIUM][self::HAS_HEATING] = 24;
+    $this->economy[OccupationArea::RESIDENTIAL_CONDOMINIUM][self::WITHOUT_HEATING] = 0;
+  }
+}

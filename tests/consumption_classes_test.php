@@ -537,3 +537,328 @@ class AirConditionerConsumptionTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
 	}
 }
+
+class WaterHeatingConsumptionTest extends PHPUnit_Framework_TestCase
+{
+	public function testShoppingWithHeat()
+	{
+    $occupationArea = OccupationArea::SHOPPING;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::HAS_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testShoppingWithoutHeat()
+	{
+    $occupationArea = OccupationArea::SHOPPING;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::WITHOUT_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testCommercialCondominiumWithHeat()
+	{
+    $occupationArea = OccupationArea::COMMERCIAL_CONDOMINIUM;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::HAS_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testCommercialCondominiumWithoutHeat()
+	{
+    $occupationArea = OccupationArea::COMMERCIAL_CONDOMINIUM;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::WITHOUT_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testResidentialCondominiumWithHeat()
+	{
+    $occupationArea = OccupationArea::RESIDENTIAL_CONDOMINIUM;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::HAS_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(24.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(12000.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(7200.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testResidentialCondominiumWithoutHeat()
+	{
+    $occupationArea = OccupationArea::RESIDENTIAL_CONDOMINIUM;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::WITHOUT_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testHospitalWithHeat()
+	{
+    $occupationArea = OccupationArea::HOSPITAL;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::HAS_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(10.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(5000.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(3000.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testHospitalWithoutHeat()
+	{
+    $occupationArea = OccupationArea::HOSPITAL;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::WITHOUT_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testHotelWithHeat()
+	{
+    $occupationArea = OccupationArea::HOTEL;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::HAS_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(24.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(12000.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(7200.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testHotelWithoutHeat()
+	{
+    $occupationArea = OccupationArea::HOTEL;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::WITHOUT_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testEducationalInstitutionWithHeat()
+	{
+    $occupationArea = OccupationArea::EDUCATIONAL_INSTITUTION;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::HAS_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(1.5, $percentageEconomy, '', 0.005);
+		$this->assertEquals(750.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(450.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testEducationalInstitutionWithoutHeat()
+	{
+    $occupationArea = OccupationArea::EDUCATIONAL_INSTITUTION;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::WITHOUT_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testSuperMarketWithHeat()
+	{
+    $occupationArea = OccupationArea::SUPER_MARKET;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::HAS_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+
+	public function testSuperMarketWithoutHeat()
+	{
+    $occupationArea = OccupationArea::SUPER_MARKET;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $installationTipe = WaterHeatingConsumption::WITHOUT_HEATING;
+    $lightingConsumption = new WaterHeatingConsumption($economySaver,
+                                                         $installationTipe);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(0.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(0.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
+	}
+}
