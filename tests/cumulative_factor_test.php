@@ -7,61 +7,61 @@ class CumulativeFactorTest extends PHPUnit_Framework_TestCase
 {
 	public function testGetMonthKwh()
 	{
-		$month_kwh_one = 19829.0;
-		$month_kwh_two = 20000.0;
+		$monthKwhOne = 19829.0;
+		$monthKwhTwo = 20000.0;
 
-    $cumulative_factor = new CumulativeFactor($month_kwh_one);
-		$result_one = $cumulative_factor->getMonthKwh();
+    $cumulativeFactor = new CumulativeFactor($monthKwhOne);
+		$resultOne = $cumulativeFactor->getMonthKwh();
 
-    $cumulative_factor->setMonthKwh($month_kwh_two);
-		$result_two = $cumulative_factor->getMonthKwh();
+    $cumulativeFactor->setMonthKwh($monthKwhTwo);
+		$resultTwo = $cumulativeFactor->getMonthKwh();
 
-		$this->assertEquals($month_kwh_one, $result_one);
-		$this->assertEquals($month_kwh_two, $result_two);
+		$this->assertEquals($monthKwhOne, $resultOne);
+		$this->assertEquals($monthKwhTwo, $resultTwo);
 	}
 
 	public function testGetDayKwh()
 	{
-		$month_kwh = 19829.0;
-		$day_kwh = 660.97;
+		$monthKwh = 19829.0;
+		$dayKwh = 660.97;
 
-    $cumulative_factor = new CumulativeFactor($month_kwh);
-		$result = $cumulative_factor->getDayKwh();
+    $cumulativeFactor = new CumulativeFactor($monthKwh);
+		$result = $cumulativeFactor->getDayKwh();
 
-		$this->assertEquals($day_kwh, $result, '', 0.01);
+		$this->assertEquals($dayKwh, $result, '', 0.01);
 	}
 
 	public function testGetHourKwh()
 	{
-		$month_kwh = 19829.0;
-		$hour_kwh = 27.54;
+		$monthKwh = 19829.0;
+		$hourKwh = 27.54;
 
-    $cumulative_factor = new CumulativeFactor($month_kwh);
-		$result = $cumulative_factor->getHourKwh();
+    $cumulativeFactor = new CumulativeFactor($monthKwh);
+		$result = $cumulativeFactor->getHourKwh();
 
-		$this->assertEquals($hour_kwh, $result, '', 0.01);
+		$this->assertEquals($hourKwh, $result, '', 0.01);
 	}
 
 	public function testGetMinuteKwh()
 	{
-		$month_kwh = 19829.0;
-		$minute_kwh = 0.46;
+		$monthKwh = 19829.0;
+		$minuteKwh = 0.46;
 
-    $cumulative_factor = new CumulativeFactor($month_kwh);
-		$result = $cumulative_factor->getMinuteKwh();
+    $cumulativeFactor = new CumulativeFactor($monthKwh);
+		$result = $cumulativeFactor->getMinuteKwh();
 
-    $this->assertEquals($minute_kwh, $result, '', 0.01);
+    $this->assertEquals($minuteKwh, $result, '', 0.01);
 	}
 
 	public function testGetSecondKwh()
 	{
-		$month_kwh = 19829.0;
-		$second_kwh = 0.008;
+		$monthKwh = 19829.0;
+		$secondKwh = 0.008;
 
-    $cumulative_factor = new CumulativeFactor($month_kwh);
-		$result = $cumulative_factor->getSecondKwh();
+    $cumulativeFactor = new CumulativeFactor($monthKwh);
+		$result = $cumulativeFactor->getSecondKwh();
 
-    $this->assertEquals($second_kwh, $result, '', 0.001);
+    $this->assertEquals($secondKwh, $result, '', 0.001);
 	}
 }
 

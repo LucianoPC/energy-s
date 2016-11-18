@@ -7,42 +7,42 @@ class CumulativeFactor {
   const MINUTES_ON_HOUR = 60.0;
   const SECONDS_ON_MINUTE = 60.0;
 
-  private $month_kwh;
-  private $day_kwh;
-  private $hour_kwh;
-  private $minute_kwh;
-  private $second_kwh;
+  private $monthKwh;
+  private $dayKwh;
+  private $hourKwh;
+  private $minuteKwh;
+  private $secondKwh;
 
-  public function __construct($month_kwh) {
-    $this->setMonthKwh($month_kwh);
+  public function __construct($monthKwh) {
+    $this->setMonthKwh($monthKwh);
   }
 
-  public function setMonthKwh($month_kwh) {
-    $this->month_kwh = $month_kwh * 1.0;
+  public function setMonthKwh($monthKwh) {
+    $this->monthKwh = $monthKwh * 1.0;
 
-    $this->day_kwh = $this->month_kwh / self::DAYS_ON_MONTH;
-    $this->hour_kwh = $this->day_kwh / self::HOURS_ON_DAY;
-    $this->minute_kwh = $this->hour_kwh / self::MINUTES_ON_HOUR;
-    $this->second_kwh = $this->minute_kwh / self::SECONDS_ON_MINUTE;
+    $this->dayKwh = $this->monthKwh / self::DAYS_ON_MONTH;
+    $this->hourKwh = $this->dayKwh / self::HOURS_ON_DAY;
+    $this->minuteKwh = $this->hourKwh / self::MINUTES_ON_HOUR;
+    $this->secondKwh = $this->minuteKwh / self::SECONDS_ON_MINUTE;
   }
 
   public function getMonthKwh() {
-    return $this->month_kwh;
+    return $this->monthKwh;
   }
 
   public function getDayKwh() {
-    return $this->day_kwh;
+    return $this->dayKwh;
   }
 
   public function getHourKwh() {
-    return $this->hour_kwh;
+    return $this->hourKwh;
   }
 
   public function getMinuteKwh() {
-    return $this->minute_kwh;
+    return $this->minuteKwh;
   }
 
   public function getSecondKwh() {
-    return $this->second_kwh;
+    return $this->secondKwh;
   }
 }
