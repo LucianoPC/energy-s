@@ -1,4 +1,4 @@
-=== Energy-S === ![Build Status](https://travis-ci.org/LucianoPC/energy-s.svg?branch=master) ![Code Climate](https://codeclimate.com/github/LucianoPC/energy-s/badges/gpa.svg)
+=== Energy-S ===  [![Build Status](https://travis-ci.org/LucianoPC/energy-s.svg?branch=master)](https://travis-ci.org/LucianoPC/energy-s) [![Code Climate](https://codeclimate.com/github/LucianoPC/energy-s/badges/gpa.svg)](https://codeclimate.com/github/LucianoPC/energy-s)
 
 Contributors: Luciano Prestes Cavalcanti <<lucianopcbr@gmail.com>>
 
