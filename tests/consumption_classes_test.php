@@ -862,3 +862,27 @@ class WaterHeatingConsumptionTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(0.0, $moneyEconomy, '', 0.005);
 	}
 }
+
+class RefrigerationConsumptionTest extends PHPUnit_Framework_TestCase
+{
+	public function testSuperMarketWithRefrigeration()
+	{
+    $occupationArea = OccupationArea::SUPER_MARKET;
+    $totalKwhComsumption = 50000;
+    $totalValue = 30000;
+
+    $economySaver = new EconomySaver($occupationArea, $totalKwhComsumption,
+                                     $totalValue);
+
+    $lightingConsumption = new RefrigerationConsumption($economySaver);
+
+
+    $kwhEconomy = $lightingConsumption->getKwhEconomy();
+    $moneyEconomy = $lightingConsumption->getMoneyEconomy();
+    $percentageEconomy = $lightingConsumption->getPercentageEconomy();
+
+		$this->assertEquals(40.0, $percentageEconomy, '', 0.005);
+		$this->assertEquals(20000.0, $kwhEconomy, '', 0.005);
+		$this->assertEquals(12000.0, $moneyEconomy, '', 0.005);
+	}
+}

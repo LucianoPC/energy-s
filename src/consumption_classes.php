@@ -177,3 +177,10 @@ class WaterHeatingConsumption extends Consumption {
     $this->economy[OccupationArea::RESIDENTIAL_CONDOMINIUM][self::WITHOUT_HEATING] = 0;
   }
 }
+
+class RefrigerationConsumption extends Consumption {
+
+  public function getPercentageEconomy() {
+    return 40;
+  }
+}
