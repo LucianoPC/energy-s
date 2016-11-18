@@ -18,4 +18,27 @@ class EconomySaver {
 
     return $fareAmount;
   }
+
+  public function getOccupationArea() {
+    return $this->occupationArea;
+  }
+
+  public function getTotalKwhConsumption() {
+    return $this->totalKwhComsumption;
+  }
+
+  public function getTotalValue() {
+    return $this->totalValue;
+  }
+}
+
+class OccupationArea {
+
+  const HOTEL = "Hotel";
+  const HOSPITAL = "Hospital";
+  const SHOPPING = "Shopping";
+  const SUPER_MARKET = "Super Market";
+  const COMMERCIAL_CONDOMINIUM = "Commercial Condominium";
+  const RESIDENTIAL_CONDOMINIUM = "Residencial Condominium";
+  const EDUCATIONAL_INSTITUTION = "Educational Institution";
 }

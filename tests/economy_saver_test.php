@@ -7,7 +7,7 @@ class EconomySaverTest extends PHPUnit_Framework_TestCase
 {
 	public function testGetFareAmount()
 	{
-    $occupationArea = "Shopping";
+    $occupationArea = OccupationArea::SHOPPING;
     $totalKwhComsumption = 50000;
     $totalValue = 30000;
 
